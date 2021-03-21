@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import BookList from "../book-list";
+import ShoppingCart from "../shoppping-cart";
 
 const Home = () => {
     return (
-        <BookList />
+        <Fragment>
+            <BookList />
+            <ShoppingCart />
+        </Fragment>
     );
 };
 

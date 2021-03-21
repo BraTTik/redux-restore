@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
-import {bookStoreServiceContext} from "../bookservice-context";
+import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import {Cart, Home} from "../pages";
+import ShopHeader from "../shop-header";
 
-const App = (props) => {
-    const service = useContext(bookStoreServiceContext)
+const App = () => {
     return (
-        <Switch>
-            <Route path={'/'} component={Home} exact/>
-            <Route path={'/cart'} component={Cart} />
-        </Switch>
+        <main className={'container'} role={'main'}>
+            <ShopHeader numItems={5} total={200}/>
+            <Switch>
+                <Route path={'/'} component={Home} exact/>
+                <Route path={'/cart'} component={Cart} />
+            </Switch>
+        </main>
     );
 };
 
